@@ -13,7 +13,7 @@ const Employee = ({ employee }) => {
   };
 
   return (
-    <div className="flex border rounded-xl overflow-hidden shadow relative">
+    <div className="flex border rounded-xl overflow-hidden shadow relative mt-4">
       <div className="w-1/4 h-60 bg-primary">
         <img
           className="h-full w-full object-cover"

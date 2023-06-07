@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { twMerge } from "tailwind-merge";
 import { addEmployee } from "../store";
+import { generateEmployee } from "../utils/staff";
 import Employee from "./Employee";
 
 const EmployeeList = () => {
@@ -8,7 +9,8 @@ const EmployeeList = () => {
   const employeeList = useSelector((state) => state.employee);
 
   const handleAddEmployee = () => {
-    dispatch(addEmployee());
+    const employee = generateEmployee();
+    dispatch(addEmployee(employee));
   };
 
   return (

@@ -18,7 +18,9 @@ const Drink = ({ id }) => {
         <span className="loading loading-bars loading-sm absolute"></span>
       </div>
 
-      <p className="w-full text-center truncate">{strDrink || "Loading..."}</p>
+      <p className="w-full text-center truncate" title={strDrink}>
+        {strDrink || "Loading..."}
+      </p>
     </div>
   );
 };

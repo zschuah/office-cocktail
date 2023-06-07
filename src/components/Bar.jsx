@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addDrink } from "../store";
 import Drink from "./Drink";
 
 const Bar = () => {
-  const [drinkList, setDrinkList] = useState(
-    [...Array(6)].map(() => crypto.randomUUID())
-  );
+  const dispatch = useDispatch();
+  const drinkList = useSelector((state) => state.bar);
 
   const handleAddDrink = () => {
-    setDrinkList([crypto.randomUUID(), ...drinkList]);
+    const drink = crypto.randomUUID();
+    dispatch(addDrink(drink));
   };
 
   return (
@@ -19,7 +20,7 @@ const Bar = () => {
         Add Drink
       </button>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-4 mt-4">
         {drinkList.map((drink) => (
           <div key={drink}>
             <Drink id={drink} />

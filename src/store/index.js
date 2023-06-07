@@ -6,10 +6,12 @@ import {
   employeeReducer,
   removeEmployee,
 } from "./slices/employeeSlice";
+import { barReducer, addDrink } from "./slices/barSlice";
 
 export const store = configureStore({
   reducer: {
     employee: employeeReducer,
+    bar: barReducer,
     [cocktailApi.reducerPath]: cocktailApi.reducer,
   },
   middleware: (getDefaultMiddleware) => {
@@ -19,5 +21,5 @@ export const store = configureStore({
 
 setupListeners(store.dispatch);
 
-export { addEmployee, removeEmployee };
+export { addEmployee, removeEmployee, addDrink };
 export const { useFetchCocktailQuery } = cocktailApi;
