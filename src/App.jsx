@@ -1,10 +1,11 @@
 import { useDispatch } from "react-redux";
 import "./App.css";
-import Bar from "./components/Bar";
+import DrinkList from "./components/DrinkList";
 import EmployeeList from "./components/EmployeeList";
 import { resetApp } from "./store/actions";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
+import ThemeBar from "./layout/ThemeBar";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,30 +19,10 @@ function App() {
           Office Cocktail
         </h1>
 
-        <section
-          id="theme"
-          className={twMerge(
-            "flex flex-col sm:flex-row justify-center",
-            "join join-vertical sm:join-horizontal",
-            "w-32 mx-auto sm:w-auto"
-          )}
-        >
-          {themeList.map((item) => (
-            <button
-              key={item}
-              className={twMerge(
-                "btn join-item",
-                item === theme && "btn-primary"
-              )}
-              onClick={() => setTheme(item)}
-            >
-              {item}
-            </button>
-          ))}
-        </section>
+        <ThemeBar theme={theme} setTheme={setTheme} themeList={themeList} />
 
         <main className="flex flex-col md:flex-row">
-          <Bar />
+          <DrinkList />
           <EmployeeList />
         </main>
 

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addDrink } from "../store";
 import Drink from "./Drink";
 
-const Bar = () => {
+const DrinkList = () => {
   const dispatch = useDispatch();
   const drinkList = useSelector((state) => state.bar);
 
@@ -31,4 +31,4 @@ const Bar = () => {
   );
 };
 
-export default Bar;
+export default DrinkList;
