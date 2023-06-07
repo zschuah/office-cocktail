@@ -1,15 +1,14 @@
-import { useState } from "react";
-import { generateEmployee } from "../utils/staff";
-import Employee from "./Employee";
+import { useDispatch, useSelector } from "react-redux";
 import { twMerge } from "tailwind-merge";
+import { addEmployee } from "../store";
+import Employee from "./Employee";
 
 const EmployeeList = () => {
-  const [employeeList, setEmployeeList] = useState(
-    [...Array(3)].map(() => generateEmployee())
-  );
+  const dispatch = useDispatch();
+  const employeeList = useSelector((state) => state.employee);
 
   const handleAddEmployee = () => {
-    setEmployeeList([...employeeList, generateEmployee()]);
+    dispatch(addEmployee());
   };
 
   return (
@@ -27,8 +26,11 @@ const EmployeeList = () => {
         );
       })}
 
-      <button className="btn block mx-auto" onClick={handleAddEmployee}>
-        Add employee
+      <button
+        className="btn btn-primary block mx-auto"
+        onClick={handleAddEmployee}
+      >
+        Add Employee
       </button>
     </div>
   );
