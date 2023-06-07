@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { generateEmployee } from "../utils/staff";
 import Employee from "./Employee";
+import { twMerge } from "tailwind-merge";
 
 const EmployeeList = () => {
   const [employeeList, setEmployeeList] = useState(
-    [...Array(1)].map(() => generateEmployee())
+    [...Array(3)].map(() => generateEmployee())
   );
 
   const handleAddEmployee = () => {
@@ -12,7 +13,12 @@ const EmployeeList = () => {
   };
 
   return (
-    <div className="m-4 p-4 border shadow">
+    <div
+      className={twMerge(
+        "m-4 p-4 border rounded-2xl shadow-2xl",
+        "max-w-5xl mx-auto"
+      )}
+    >
       {employeeList?.map((employee) => {
         return (
           <div key={employee.id}>

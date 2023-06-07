@@ -4,7 +4,7 @@ import EmployeeList from "./components/EmployeeList";
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <h1>Office Cocktail</h1>
 
       <EmployeeList />
     </div>
