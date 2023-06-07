@@ -26,7 +26,7 @@ const Employee = ({ employee }) => {
         <h2>{employee.name}</h2>
         <p>Favourite drink: {strDrink || "Loading..."}</p>
 
-        <EmployeeDetails {...data?.drinks[0]} />
+        <EmployeeDetails dataDrinks={data?.drinks[0]} />
 
         <button
           className={twMerge(

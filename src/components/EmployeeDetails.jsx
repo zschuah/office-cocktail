@@ -1,12 +1,17 @@
 import { twMerge } from "tailwind-merge";
+import DialogDrink from "../layout/DialogDrink";
+import { useRef } from "react";
 
-const EmployeeDetails = ({
-  strDrink,
-  strDrinkThumb,
-  strIngredient1,
-  strIngredient2,
-  strIngredient3,
-}) => {
+const EmployeeDetails = ({ dataDrinks }) => {
+  const {
+    strDrink,
+    strDrinkThumb,
+    strIngredient1,
+    strIngredient2,
+    strIngredient3,
+  } = dataDrinks || {};
+
+  const modalRef = useRef();
   const ingredients = [strIngredient1, strIngredient2, strIngredient3].filter(
     (el) => el
   );
@@ -16,8 +21,10 @@ const EmployeeDetails = ({
       <div
         className={twMerge(
           "grid place-items-center h-32 w-32",
-          "bg-secondary mask mask-squircle"
+          "bg-secondary mask mask-squircle",
+          "cursor-pointer"
         )}
+        onClick={() => modalRef.current.showModal()}
       >
         <img className="z-10" src={strDrinkThumb} alt={strDrink} />
         {/* LOADING SPINNER */}
@@ -31,6 +38,8 @@ const EmployeeDetails = ({
           </div>
         ))}
       </div>
+
+      <DialogDrink modalRef={modalRef} {...dataDrinks} />
     </div>
   );
 };
