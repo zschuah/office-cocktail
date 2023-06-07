@@ -32,9 +32,13 @@ const DialogDrink = ({
 
           <div className="flex flex-col items-center space-y-2">
             {ingredients?.map((el) => (
-              <div key={el.ingredient}>
-                <div className="badge badge-neutral">{el.measure || "+"}</div>
-                <div className="badge badge-secondary">{el.ingredient}</div>
+              <div key={el.ingredient} className="join">
+                <div className="badge badge-neutral join-item">
+                  {el.measure || "+"}
+                </div>
+                <div className="badge badge-secondary join-item">
+                  {el.ingredient}
+                </div>
               </div>
             ))}
           </div>

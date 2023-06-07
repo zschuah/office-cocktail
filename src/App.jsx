@@ -1,11 +1,11 @@
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import "./App.css";
 import DrinkList from "./components/DrinkList";
 import EmployeeList from "./components/EmployeeList";
-import { resetApp } from "./store/actions";
-import { useState } from "react";
-import { twMerge } from "tailwind-merge";
 import ThemeBar from "./layout/ThemeBar";
+import { resetApp } from "./store/actions";
+import CocktailImg from "./assets/cocktail.svg";
 
 function App() {
   const dispatch = useDispatch();
@@ -15,9 +15,10 @@ function App() {
   return (
     <div className="App" data-theme={theme}>
       <div className="max-w-5xl mx-auto relative">
-        <h1 className="text-center text-5xl py-5 pt-20 sm:pt-5">
-          Office Cocktail
-        </h1>
+        <header className="flex flex-col sm:flex-row justify-center items-center py-5">
+          <img src={CocktailImg} alt="cocktail" className="h-20" />
+          <h1 className="text-5xl font-[Pattaya]">Office Cocktail</h1>
+        </header>
 
         <ThemeBar theme={theme} setTheme={setTheme} themeList={themeList} />
 
