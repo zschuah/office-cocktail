@@ -6,7 +6,7 @@ const employeeSlice = createSlice({
   initialState: [...Array(2)].map(() => generateEmployee()),
   reducers: {
     addEmployee(state, action) {
-      state.push(generateEmployee());
+      state.unshift(generateEmployee());
     },
     removeEmployee(state, action) {
       const index = state.findIndex((item) => item.id === action.payload);

@@ -5,7 +5,7 @@ import EmployeeDetails from "./EmployeeDetails";
 
 const Employee = ({ employee }) => {
   const dispatch = useDispatch();
-  const { data, error, isLoading } = useFetchCocktailQuery(employee);
+  const { data, error, isLoading } = useFetchCocktailQuery(employee.id);
   const { strDrink } = data?.drinks[0] || {};
 
   const handleRemoveEmployee = () => {
@@ -13,7 +13,7 @@ const Employee = ({ employee }) => {
   };
 
   return (
-    <div className="flex border rounded-xl overflow-hidden shadow mb-4 relative">
+    <div className="flex border rounded-xl overflow-hidden shadow relative">
       <div className="w-1/4 h-60 bg-primary">
         <img
           className="h-full w-full object-cover"
@@ -26,36 +26,7 @@ const Employee = ({ employee }) => {
         <h2>{employee.name}</h2>
         <p>Favourite drink: {strDrink || "Loading..."}</p>
 
-        <EmployeeDetails employee={employee} {...data?.drinks[0]} />
-
-        {/* <div className="flex items-center space-x-4">
-          <div
-            className={twMerge(
-              "grid place-items-center h-32 w-32",
-              "bg-secondary mask mask-squircle"
-            )}
-          >
-            <img className="z-10" src={strDrinkThumb} alt={strDrink} />
-            <span className="loading loading-bars loading-lg absolute"></span>
-          </div>
-
-          <div className="flex flex-col space-y-2">
-            {ingredients.map((ingredient) => (
-              <div key={ingredient} className="badge badge-secondary">
-                {ingredient}
-              </div>
-            ))}
-          </div>
-
-          <div className="tooltip tooltip-bottom" data-tip="Alcohol tolerance">
-            <div
-              className="radial-progress bg-accent text-accent-content border-4 border-accent"
-              style={{ "--value": employee.tolerance }}
-            >
-              {employee.tolerance}%
-            </div>
-          </div>
-        </div> */}
+        <EmployeeDetails {...data?.drinks[0]} />
 
         <button
           className={twMerge(

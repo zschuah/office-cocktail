@@ -5,10 +5,8 @@ export const generateEmployee = () => {
   const id = crypto.randomUUID();
   const name = `${first.firstName} ${last}`;
   const image = `https://source.unsplash.com/random/?${first.gender}=${id}`;
-  const content = Math.floor(Math.random() * 80) + 10;
-  const tolerance = Math.floor(Math.random() * 80) + 10;
 
-  return { id, name, image, content, tolerance };
+  return { id, name, image };
 };
 
 const firstNameList = [

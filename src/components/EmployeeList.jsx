@@ -13,11 +13,15 @@ const EmployeeList = () => {
 
   return (
     <div
-      className={twMerge(
-        "m-4 p-4 border rounded-2xl shadow-2xl",
-        "max-w-5xl mx-auto"
-      )}
+      className={twMerge("m-4 p-4 border rounded-2xl shadow-2xl", "flex-[2]")}
     >
+      <button
+        className="btn btn-primary block mx-auto"
+        onClick={handleAddEmployee}
+      >
+        Add Employee
+      </button>
+
       {employeeList?.map((employee) => {
         return (
           <div key={employee.id}>
@@ -25,13 +29,6 @@ const EmployeeList = () => {
           </div>
         );
       })}
-
-      <button
-        className="btn btn-primary block mx-auto"
-        onClick={handleAddEmployee}
-      >
-        Add Employee
-      </button>
     </div>
   );
 };

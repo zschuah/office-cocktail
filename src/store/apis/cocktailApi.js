@@ -8,11 +8,11 @@ export const cocktailApi = createApi({
   endpoints(builder) {
     return {
       fetchCocktail: builder.query({
-        query: (employee) => {
+        query: (id) => {
           return {
             url: "/random.php",
             params: {
-              v: employee.id,
+              v: id,
             },
             method: "GET",
           };

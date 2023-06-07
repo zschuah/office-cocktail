@@ -1,7 +1,6 @@
 import { twMerge } from "tailwind-merge";
 
 const EmployeeDetails = ({
-  employee,
   strDrink,
   strDrinkThumb,
   strIngredient1,
@@ -31,26 +30,6 @@ const EmployeeDetails = ({
             {ingredient}
           </div>
         ))}
-      </div>
-
-      <div className="tooltip tooltip-bottom" data-tip="Alcohol conent">
-        {/* RADIAL PROGRESS */}
-        <div
-          className="radial-progress bg-accent text-accent-content border-4 border-accent"
-          style={{ "--value": employee.content }}
-        >
-          {employee.content}%
-        </div>
-      </div>
-
-      <div className="tooltip tooltip-bottom" data-tip="Alcohol tolerance">
-        {/* RADIAL PROGRESS */}
-        <div
-          className="radial-progress bg-neutral text-neutral-content border-4 border-neutral"
-          style={{ "--value": employee.tolerance }}
-        >
-          {employee.tolerance}%
-        </div>
       </div>
     </div>
   );
