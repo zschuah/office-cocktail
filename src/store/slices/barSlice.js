@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { resetApp } from "../actions";
 
 export const barSlice = createSlice({
   name: "bar",
@@ -11,6 +12,11 @@ export const barSlice = createSlice({
       const index = state.findIndex((item) => item.id === action.payload);
       state.splice(index, 1);
     },
+  },
+  extraReducers(builder) {
+    builder.addCase(resetApp, (state, action) => {
+      return [...Array(6)].map(() => crypto.randomUUID());
+    });
   },
 });
 

@@ -19,7 +19,11 @@ const Drink = ({ id }) => {
         )}
         onClick={() => modalRef.current.showModal()}
       >
-        <img className="z-10" src={strDrinkThumb} alt={strDrink} />
+        <img
+          className="z-10 hover:scale-125 transition"
+          src={strDrinkThumb}
+          alt={strDrink}
+        />
         {/* LOADING SPINNER */}
         <span className="loading loading-bars loading-sm absolute"></span>
       </div>

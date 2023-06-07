@@ -22,7 +22,7 @@ const Employee = ({ employee }) => {
         />
       </div>
 
-      <div className="w-3/4 p-4 flex flex-col items-start">
+      <div className="w-3/4 p-4 flex flex-col items-start justify-around">
         <h2>{employee.name}</h2>
         <p>Favourite drink: {strDrink || "Loading..."}</p>
 
