@@ -17,12 +17,13 @@ const EmployeeDetails = ({ dataDrinks }) => {
   );
 
   return (
-    <div className="flex items-center space-x-4">
+    <div className="flex items-center gap-4">
       <div
         className={twMerge(
           "grid place-items-center h-32 w-32",
           "bg-secondary mask mask-squircle",
-          "cursor-pointer"
+          "cursor-pointer",
+          "h-14 w-14 sm:h-32 sm:w-32 "
         )}
         onClick={() => modalRef.current.showModal()}
       >

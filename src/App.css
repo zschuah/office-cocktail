@@ -3,6 +3,7 @@
 } */
 
 .App {
-  margin: 1rem;
-  border: 3px dashed black;
+  /* margin: 1rem;
+  border: 3px dashed black; */
+  min-height: 100vh;
 }

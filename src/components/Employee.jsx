@@ -30,7 +30,7 @@ const Employee = ({ employee }) => {
 
         <button
           className={twMerge(
-            "btn btn-primary btn-square text-3xl",
+            "btn btn-sm btn-primary btn-square text-lg",
             "absolute top-0 right-0 rounded-none rounded-bl-xl"
           )}
           onClick={handleRemoveEmployee}

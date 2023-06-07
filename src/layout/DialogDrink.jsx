@@ -23,7 +23,7 @@ const DialogDrink = ({
       <div className="space-y-4">
         <h3 className="text-center">{strDrink}</h3>
 
-        <div className="flex justify-center items-center space-x-4">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <img
             className="w-40 mask mask-squircle"
             src={strDrinkThumb}
