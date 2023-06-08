@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Dialog from "./Dialog";
 
 const DialogDrink = ({
@@ -17,6 +18,8 @@ const DialogDrink = ({
     { ingredient: strIngredient2, measure: strMeasure2 },
     { ingredient: strIngredient3, measure: strMeasure3 },
   ].filter((el) => el.ingredient);
+
+  const navigate = useNavigate();
 
   return (
     <Dialog modalRef={modalRef}>
@@ -45,6 +48,13 @@ const DialogDrink = ({
         </div>
 
         <p>{strInstructions}</p>
+
+        <button
+          className="btn btn-primary block mx-auto"
+          onClick={() => navigate("/" + strDrink)}
+        >
+          Go to Page
+        </button>
       </div>
     </Dialog>
   );

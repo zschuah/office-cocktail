@@ -5,7 +5,7 @@ import { useFetchCocktailQuery } from "../store";
 
 const Drink = ({ id }) => {
   const { data, error, isLoading } = useFetchCocktailQuery(id);
-  const { strDrink, strDrinkThumb } = data?.drinks[0] || {};
+  const { strDrink, strDrinkThumb } = data?.drinks?.[0] || {};
 
   const modalRef = useRef();
 

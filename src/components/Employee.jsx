@@ -6,7 +6,7 @@ import EmployeeDetails from "./EmployeeDetails";
 const Employee = ({ employee }) => {
   const dispatch = useDispatch();
   const { data, error, isLoading } = useFetchCocktailQuery(employee.id);
-  const { strDrink } = data?.drinks[0] || {};
+  const { strDrink } = data?.drinks?.[0] || {};
 
   const handleRemoveEmployee = () => {
     dispatch(removeEmployee(employee.id));

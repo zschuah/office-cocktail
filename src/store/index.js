@@ -22,4 +22,5 @@ export const store = configureStore({
 setupListeners(store.dispatch);
 
 export { addEmployee, removeEmployee, addDrink };
-export const { useFetchCocktailQuery } = cocktailApi;
+export const { useFetchCocktailQuery, useFetchCocktailByNameQuery } =
+  cocktailApi;

@@ -7,6 +7,19 @@ export const cocktailApi = createApi({
   }),
   endpoints(builder) {
     return {
+      //https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+      fetchCocktailByName: builder.query({
+        query: (name) => {
+          return {
+            url: "/search.php",
+            params: {
+              s: name,
+            },
+            method: "GET",
+          };
+        },
+      }),
+      //https://www.thecocktaildb.com/api/json/v1/1/random.php
       fetchCocktail: builder.query({
         query: (id) => {
           return {
@@ -22,4 +35,5 @@ export const cocktailApi = createApi({
   },
 });
 
-export const { useFetchCocktailQuery } = cocktailApi;
+export const { useFetchCocktailQuery, useFetchCocktailByNameQuery } =
+  cocktailApi;

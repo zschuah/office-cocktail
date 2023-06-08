@@ -14,9 +14,7 @@ const EmployeeList = () => {
   };
 
   return (
-    <div
-      className={twMerge("m-4 p-4 border rounded-2xl shadow-2xl", "flex-[2]")}
-    >
+    <div className="m-4 p-4 border rounded-2xl shadow-2xl flex-[2]">
       <button
         className="btn btn-primary block mx-auto"
         onClick={handleAddEmployee}
