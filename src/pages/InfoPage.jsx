@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import BottleImg from "../assets/bottle.png";
 import { useFetchCocktailByNameQuery } from "../store";
+import Card from "../layout/Card";
 
 const InfoPage = () => {
   const navigate = useNavigate();
@@ -29,28 +30,37 @@ const InfoPage = () => {
     { ingredient: strIngredient5, measure: strMeasure5 },
   ].filter((el) => el.ingredient);
 
+  const handleNavigate = () => {
+    navigate("/");
+  };
+
   if (isLoading) {
     return (
-      <div className="m-4 p-4 border rounded-2xl shadow-2xl">
-        <span className="loading loading-bars w-60 block mx-auto"></span>
-      </div>
+      <Card>
+        <span className="loading loading-bars w-40 block mx-auto"></span>
+      </Card>
     );
   }
 
   if (!strDrink) {
     return (
-      <div className="m-4 p-4 border rounded-2xl shadow-2xl inline-block">
+      <Card>
         <div className="flex flex-col items-center space-y-4">
-          <h2>Hmm, your drink does not seem to exist.</h2>
-          <img className="w-80" src={BottleImg} alt="bottle" />
+          <h2 className="text-center">
+            Hmm, your drink does not seem to exist.
+          </h2>
+          <img className="w-60" src={BottleImg} alt="bottle" />
+          <button className="btn btn-primary" onClick={handleNavigate}>
+            Back
+          </button>
         </div>
-      </div>
+      </Card>
     );
   }
 
   return (
-    <div className="m-4 p-4 border rounded-2xl shadow-2xl inline-block">
-      <div className="space-y-4">
+    <Card>
+      <div className="flex flex-col items-center space-y-4">
         <h3 className="text-center">{strDrink}</h3>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -76,14 +86,11 @@ const InfoPage = () => {
 
         <p className="text-center">{strInstructions}</p>
 
-        <button
-          className="btn btn-primary block mx-auto"
-          onClick={() => navigate("/")}
-        >
+        <button className="btn btn-primary" onClick={handleNavigate}>
           Back
         </button>
       </div>
-    </div>
+    </Card>
   );
 };
 

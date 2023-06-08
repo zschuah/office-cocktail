@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import Card from "../layout/Card";
 import { addDrink } from "../store";
 import Drink from "./Drink";
 
@@ -12,7 +13,7 @@ const DrinkList = () => {
   };
 
   return (
-    <div className="m-4 p-4 border rounded-2xl shadow-2xl flex-1">
+    <Card className="flex-1">
       <button
         onClick={handleAddDrink}
         className="btn btn-primary block mx-auto"
@@ -27,7 +28,7 @@ const DrinkList = () => {
           </div>
         ))}
       </div>
-    </div>
+    </Card>
   );
 };
 

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { twMerge } from "tailwind-merge";
+import Card from "../layout/Card";
 import { addEmployee } from "../store";
 import { generateEmployee } from "../utils/staff";
 import Employee from "./Employee";
@@ -14,7 +14,7 @@ const EmployeeList = () => {
   };
 
   return (
-    <div className="m-4 p-4 border rounded-2xl shadow-2xl flex-[2]">
+    <Card className="flex-[2]">
       <button
         className="btn btn-primary block mx-auto"
         onClick={handleAddEmployee}
@@ -29,7 +29,7 @@ const EmployeeList = () => {
           </div>
         );
       })}
-    </div>
+    </Card>
   );
 };
 

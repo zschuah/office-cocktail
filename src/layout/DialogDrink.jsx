@@ -21,6 +21,10 @@ const DialogDrink = ({
 
   const navigate = useNavigate();
 
+  const handleNavigate = () => {
+    navigate("/" + strDrink);
+  };
+
   return (
     <Dialog modalRef={modalRef}>
       <div className="space-y-4">
@@ -51,7 +55,7 @@ const DialogDrink = ({
 
         <button
           className="btn btn-primary block mx-auto"
-          onClick={() => navigate("/" + strDrink)}
+          onClick={handleNavigate}
         >
           Go to Page
         </button>

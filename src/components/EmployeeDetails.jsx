@@ -17,10 +17,10 @@ const EmployeeDetails = ({ dataDrinks }) => {
   );
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-1 sm:gap-4">
       <div
         className={twMerge(
-          "grid place-items-center h-32 w-32",
+          "grid place-items-center",
           "bg-secondary mask mask-squircle",
           "cursor-pointer",
           "h-14 w-14 sm:h-32 sm:w-32 "
@@ -38,7 +38,7 @@ const EmployeeDetails = ({ dataDrinks }) => {
 
       <div className="flex flex-col space-y-2">
         {ingredients.map((ingredient) => (
-          <div key={ingredient} className="badge badge-secondary">
+          <div key={ingredient} className="badge badge-secondary h-fit">
             {ingredient}
           </div>
         ))}
