@@ -6,7 +6,8 @@ import Card from "../layout/Card";
 const InfoPage = () => {
   const navigate = useNavigate();
   const { drink } = useParams();
-  const { data, error, isLoading } = useFetchCocktailByNameQuery(drink);
+  const { data, error, isLoading, isFetching } =
+    useFetchCocktailByNameQuery(drink);
   const {
     strDrink,
     strDrinkThumb,
@@ -15,12 +16,20 @@ const InfoPage = () => {
     strIngredient3,
     strIngredient4,
     strIngredient5,
+    strIngredient6,
+    strIngredient7,
+    strIngredient8,
+    strIngredient9,
     strInstructions,
     strMeasure1,
     strMeasure2,
     strMeasure3,
     strMeasure4,
     strMeasure5,
+    strMeasure6,
+    strMeasure7,
+    strMeasure8,
+    strMeasure9,
   } = data?.drinks?.[0] || {};
   const ingredients = [
     { ingredient: strIngredient1, measure: strMeasure1 },
@@ -28,13 +37,17 @@ const InfoPage = () => {
     { ingredient: strIngredient3, measure: strMeasure3 },
     { ingredient: strIngredient4, measure: strMeasure4 },
     { ingredient: strIngredient5, measure: strMeasure5 },
+    { ingredient: strIngredient6, measure: strMeasure6 },
+    { ingredient: strIngredient7, measure: strMeasure7 },
+    { ingredient: strIngredient8, measure: strMeasure8 },
+    { ingredient: strIngredient9, measure: strMeasure9 },
   ].filter((el) => el.ingredient);
 
   const handleNavigate = () => {
-    navigate("/");
+    navigate(-1);
   };
 
-  if (isLoading) {
+  if (isFetching) {
     return (
       <Card>
         <span className="loading loading-bars w-40 block mx-auto"></span>
@@ -46,9 +59,7 @@ const InfoPage = () => {
     return (
       <Card>
         <div className="flex flex-col items-center space-y-4">
-          <h2 className="text-center">
-            Hmm, your drink does not seem to exist.
-          </h2>
+          <h3>Sorry, {drink} is not available here.</h3>
           <img className="w-60" src={BottleImg} alt="bottle" />
           <button className="btn btn-primary" onClick={handleNavigate}>
             Back
@@ -71,8 +82,8 @@ const InfoPage = () => {
           />
 
           <div className="flex flex-col items-center space-y-2">
-            {ingredients?.map((el) => (
-              <div key={el.ingredient} className="join">
+            {ingredients?.map((el, i) => (
+              <div key={el.ingredient + i} className="join">
                 <div className="badge badge-neutral join-item">
                   {el.measure || "+"}
                 </div>

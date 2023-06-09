@@ -5,6 +5,10 @@ import CocktailImg from "../assets/cocktail.svg";
 const Header = () => {
   const navigate = useNavigate();
 
+  const handleNavigate = () => {
+    navigate("/");
+  };
+
   return (
     <header
       className={twMerge(
@@ -12,10 +16,15 @@ const Header = () => {
         "justify-center items-center py-5"
       )}
     >
-      <img src={CocktailImg} alt="cocktail" className="h-20" />
+      <img
+        src={CocktailImg}
+        alt="cocktail"
+        className="h-20 cursor-pointer"
+        onClick={handleNavigate}
+      />
       <h1
         className="text-5xl font-[Pattaya] cursor-pointer"
-        onClick={() => navigate("/")}
+        onClick={handleNavigate}
       >
         Office Cocktail
       </h1>

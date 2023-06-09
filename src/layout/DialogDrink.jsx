@@ -22,7 +22,7 @@ const DialogDrink = ({
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate("/" + strDrink);
+    navigate("/drink/" + strDrink);
   };
 
   return (
@@ -57,7 +57,7 @@ const DialogDrink = ({
           className="btn btn-primary block mx-auto"
           onClick={handleNavigate}
         >
-          Go to Page
+          View Page
         </button>
       </div>
     </Dialog>

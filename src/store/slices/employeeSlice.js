@@ -4,7 +4,7 @@ import { resetApp } from "../actions";
 
 const employeeSlice = createSlice({
   name: "employee",
-  initialState: [...Array(2)].map(() => generateEmployee()),
+  initialState: [...Array(1)].map(() => generateEmployee()),
   reducers: {
     addEmployee(state, action) {
       state.unshift(action.payload);
@@ -16,7 +16,7 @@ const employeeSlice = createSlice({
   },
   extraReducers(builder) {
     builder.addCase(resetApp, (state, action) => {
-      return [...Array(2)].map(() => generateEmployee());
+      return [...Array(1)].map(() => generateEmployee());
     });
   },
 });
