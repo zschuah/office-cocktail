@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Header from "./layout/Header";
-import InputBar from "./layout/InputBar";
-import ThemeBar from "./layout/ThemeBar";
+import Header from "./components/Header";
+import InputBar from "./components/InputBar";
+import ThemeBar from "./components/ThemeBar";
 import InfoPage from "./pages/InfoPage";
 import MainPage from "./pages/MainPage";
 

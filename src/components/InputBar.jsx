@@ -21,7 +21,7 @@ const InputBar = () => {
   }, [location]);
 
   return (
-    <div className="flex flex-col items-center">
+    <section className="flex flex-col items-center">
       <p
         className="p-2 cursor-pointer hover:opacity-80 hover:underline"
         onClick={() => setIsExpanded(!isExpanded)}
@@ -46,7 +46,7 @@ const InputBar = () => {
           <button className="btn btn-primary join-item">Submit</button>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 
