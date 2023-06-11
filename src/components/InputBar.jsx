@@ -23,7 +23,7 @@ const InputBar = () => {
   return (
     <section className="flex flex-col items-center">
       <p
-        className="p-2 cursor-pointer hover:opacity-80 hover:underline"
+        className="p-2 underline cursor-pointer hover:opacity-80"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         I know a drink!

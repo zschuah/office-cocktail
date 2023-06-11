@@ -1,10 +1,12 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useNavigationType, useParams } from "react-router-dom";
 import BottleImg from "../assets/bottle.png";
-import { useFetchCocktailByNameQuery } from "../store";
 import Card from "../layout/Card";
+import { useFetchCocktailByNameQuery } from "../store";
 
 const InfoPage = () => {
   const navigate = useNavigate();
+  const navigationType = useNavigationType();
+
   const { drink } = useParams();
   const { data, error, isLoading, isFetching } =
     useFetchCocktailByNameQuery(drink);
@@ -44,7 +46,11 @@ const InfoPage = () => {
   ].filter((el) => el.ingredient);
 
   const handleNavigate = () => {
-    navigate(-1);
+    if (navigationType === "POP") {
+      navigate("/");
+    } else {
+      navigate(-1);
+    }
   };
 
   if (isFetching) {

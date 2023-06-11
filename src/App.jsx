@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import InputBar from "./components/InputBar";
 import ThemeBar from "./components/ThemeBar";
@@ -13,7 +14,7 @@ function App() {
 
   return (
     <div className="App" data-theme={theme}>
-      <div className="max-w-5xl mx-auto relative pb-4">
+      <div className="max-w-5xl mx-auto relative pb-8">
         <Header />
         <ThemeBar theme={theme} setTheme={setTheme} themeList={themeList} />
         <InputBar />
@@ -24,6 +25,8 @@ function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
+
+      <Footer />
     </div>
   );
 }

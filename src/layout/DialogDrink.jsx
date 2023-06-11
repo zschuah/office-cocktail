@@ -51,7 +51,7 @@ const DialogDrink = ({
           </div>
         </div>
 
-        <p>{strInstructions}</p>
+        <p className="hidden sm:block">{strInstructions}</p>
 
         <button
           className="btn btn-primary block mx-auto"
