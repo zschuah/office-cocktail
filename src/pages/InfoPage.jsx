@@ -65,7 +65,7 @@ const InfoPage = () => {
     return (
       <Card>
         <div className="flex flex-col items-center space-y-4">
-          <h3>Sorry, {drink} is not available here.</h3>
+          <h3 className="text-center">Sorry, {drink} is not available here.</h3>
           <img className="w-60" src={BottleImg} alt="bottle" />
           <button className="btn btn-primary" onClick={handleNavigate}>
             Back

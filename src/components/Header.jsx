@@ -23,7 +23,7 @@ const Header = () => {
         onClick={handleNavigate}
       />
       <h1
-        className="text-5xl font-[Pattaya] cursor-pointer"
+        className="text-5xl font-[Pattaya] cursor-pointer select-none"
         onClick={handleNavigate}
       >
         Office Cocktail
