@@ -20,18 +20,18 @@ const EmployeeDetails = ({ dataDrinks }) => {
     <div className="flex items-center gap-1 sm:gap-4">
       <div
         className={twMerge(
-          "grid place-items-center",
-          "bg-secondary mask mask-squircle",
-          "cursor-pointer",
-          "h-14 w-14 sm:h-32 sm:w-32 "
+          "grid place-items-center bg-secondary",
+          "h-14 w-14 sm:h-32 sm:w-32",
+          // "mask mask-squircle",
+          "rounded-3xl overflow-hidden",
+          "shadow-[2px_3px_4px] hover:shadow-[4px_6px_8px]",
+          "shadow-primary hover:shadow-primary",
+          "hover:-translate-y-1",
+          "cursor-pointer relative transition"
         )}
         onClick={() => modalRef.current.showModal()}
       >
-        <img
-          className="z-10 hover:scale-125 transition"
-          src={strDrinkThumb}
-          alt={strDrink}
-        />
+        <img className="z-10" src={strDrinkThumb} alt={strDrink} />
         {/* LOADING SPINNER */}
         <span className="loading loading-bars loading-lg absolute"></span>
       </div>

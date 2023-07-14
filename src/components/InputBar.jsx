@@ -23,10 +23,16 @@ const InputBar = () => {
   return (
     <section className="flex flex-col items-center">
       <p
-        className="p-2 underline cursor-pointer hover:opacity-80"
+        className="p-2 underline cursor-pointer text-xl space-x-4"
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        I know a drink!
+        <span className="inline-block text-primary rounded-full animate-ping">
+          &#9755;
+        </span>
+        <span>I know a drink!</span>
+        <span className="inline-block text-primary rounded-full animate-ping">
+          &#9754;
+        </span>
       </p>
 
       <div
