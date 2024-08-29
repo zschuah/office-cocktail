@@ -4,7 +4,8 @@ export const generateEmployee = () => {
 
   const id = crypto.randomUUID();
   const name = `${first.firstName} ${last}`;
-  const image = `https://source.unsplash.com/random/?${first.gender}=${id}`;
+  // const image = `https://source.unsplash.com/random/?${first.gender}=${id}`;
+  const image = `https://picsum.photos/seed/${id}/200/300`;
 
   return { id, name, image };
 };
